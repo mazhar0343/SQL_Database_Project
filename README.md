@@ -13,5 +13,3 @@ Step 3: Run Code on line 13 in cmd
 
 
 Step 4: Open index.html
-
-Back-end development by Muhammad Azhar
