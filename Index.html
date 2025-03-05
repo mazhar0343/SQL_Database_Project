@@ -1,0 +1,760 @@
+<!Doctype html>
+<html>
+	<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900');
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: hsla(203, 85%, 56%, 0.4);
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+nav .brand
+{
+    float: left;
+    height: 100%;
+    line-height: 70px;
+}
+nav .brand h2
+{
+    margin: 0;
+    padding: 0px;;
+    color: #FFFFFF;
+}
+nav ul
+{
+    float: right;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li
+{
+    list-style: none;
+}
+nav ul li a
+{
+    position: relative;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+nav ul li a:hover
+{
+    color: #262626;
+}
+nav ul li a:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+nav ul li a:hover:before
+{
+    transform-origin: left;
+    transform: scaleX(1);
+} 
+
+section
+{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    background: #000;
+    top: 60px;
+}
+section .screen
+{
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; 
+    overflow: hidden;
+    transition: 1s;
+}
+section:hover .screen{
+    opacity: 0.1;
+}
+section .screen:hover
+{
+    flex-grow: 4;
+    opacity: 1;
+}
+section .screen:nth-child(1)
+{
+    background: url(https://m.media-amazon.com/images/M/MV5BOTI5Y2M3NmQtNDg5ZC00OTQ0LWEzOGYtMjM4Zjg0YzY0M2I0XkEyXkFqcGdeQXVyNjkwNzEwMzU@._V1_SY1000_SX675_AL_.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+section .screen:nth-child(2)
+{
+    background: url(https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section .screen:nth-child(3)
+{
+    background: url(https://m.media-amazon.com/images/M/MV5BMTA2NzM0MjA0MTJeQTJeQWpwZ15BbWU4MDk1MzYwNzYz._V1_SY1000_CR0,0,631,1000_AL_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section .screen .content
+{
+    position: absolute;
+    width: 400px;
+    height: auto;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: 0.5s;
+    text-align: justify;
+}
+section .screen:hover .content
+{
+    transform: translateX(0);
+    transition-delay: .5s;
+}
+section .screen .content h2
+{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #ed363a;
+}
+section .screen .content p
+{
+    margin: 0;
+    padding: 0;
+}
+section .screen .rate
+{
+    position: absolute;
+    width: 40px;
+    height: 0px;;
+    background: #fff;
+    padding: 40px;
+    transform: translateX(100%);
+    
+    transition: 0.5s;
+    text-align: center;
+    top: 20px;
+   
+}
+section .screen:hover .rate
+{
+    transform: translateX(0);
+    transition-delay: .5s;
+} 
+section .screen .rate h5
+{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #ed363a;
+}
+section .screen .video a img
+{
+width: 90px;
+height: 90px;
+position: absolute;
+
+top: 50%;
+right: 50%;
+transform: translateX(500%);
+transition: 0.5s;
+
+}
+
+section .screen:hover .video a img
+{
+transition-delay: .5s;
+transform: translateX(0%);
+}
+section .screen .video a img:hover
+{
+width: 100px;
+height: 100px;   
+}
+
+section .screen .bg-modal {
+background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+display: none;
+justify-content: center;
+align-items: center;
+
+}
+
+section .screen .bg-modal .modal-contents 
+{
+height: 300px;
+width: 500px;
+background-color: white;
+text-align: center;
+padding: 30px;
+position: relative;
+border-radius: 4px;
+overflow-y:auto;
+overflow-x: hidden;
+}
+
+
+section .screen .bg-modal .modal-contents .content1 iframe
+{
+width: 100%;
+border-radius: 4px;
+}
+section .screen .bg-modal {
+background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+display: none;
+justify-content: center;
+align-items: center;
+
+}
+
+section .screen .bg-modal .modal-contents 
+{
+height: 300px;
+width: 500px;
+background-color: white;
+text-align: center;
+padding: 30px;
+position: relative;
+border-radius: 4px;
+overflow-y:auto;
+overflow-x: hidden;
+}
+
+
+section .screen .bg-modal .modal-contents .content1 iframe
+{
+width: 100%;
+border-radius: 4px;
+}
+
+section .screen .bg-modal2 {
+background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+display: none;
+justify-content: center;
+align-items: center;
+
+}
+
+section .screen .bg-modal2 .modal-contents 
+{
+height: 300px;
+width: 500px;
+background-color: white;
+text-align: center;
+padding: 30px;
+position: relative;
+border-radius: 4px;
+overflow-y:auto;
+overflow-x: hidden;
+}
+
+
+section .screen .bg-modal2 .modal-contents .content1 iframe
+{
+width: 100%;
+border-radius: 4px;
+}
+
+
+section .screen .bg-modal3 {
+background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+display: none;
+justify-content: center;
+align-items: center;
+
+}
+
+section .screen .bg-modal3 .modal-contents 
+{
+height: 300px;
+width: 500px;
+background-color: white;
+text-align: center;
+padding: 30px;
+position: relative;
+border-radius: 4px;
+overflow-y:auto;
+overflow-x: hidden;
+}
+
+
+section .screen .bg-modal3 .modal-contents .content1 iframe
+{
+width: 100%;
+border-radius: 4px;
+}
+.close 
+{
+position: absolute;
+top: -10px;
+right: 10px;
+font-size: 42px;
+color: #333;
+transform: rotate(45deg);
+cursor: pointer;
+}
+.close:hover 
+{
+    color: #666;
+}
+.close2
+{
+position: absolute;
+top: -10px;
+right: 10px;
+font-size: 42px;
+color: #333;
+transform: rotate(45deg);
+cursor: pointer;
+}
+.close2:hover 
+{
+    color: #666;
+}
+.close3
+{
+position: absolute;
+margin-top:-158px;
+margin-left:237px;
+
+font-size: 42px;
+color: #333;
+transform: rotate(45deg);
+cursor: pointer;
+}
+.close3:hover 
+{
+    color: #666;
+}
+
+    .container
+{
+	max-width: 1000px;
+	margin: 100px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    
+}
+.card
+{
+	position: relative;
+	margin: 20px 0;
+	width: 350px;
+	height: 500px;
+	background: #fff;
+	transform-style: preserve-3d;
+	transform: perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 0 20px 20px rgba(0,0,0,.5);
+	transition: 1s;
+    
+}
+.card:hover
+{
+	z-index: 10000;
+	transform: perspective(2000px) rotate(-10deg);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+
+.card .imgBox
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	position: relative;
+	transform-origin: left;
+	z-index: 1;
+	transition: 1s cubic-bezier(.15,1.7,.84,.58);
+	background: #111;
+}
+.card .imgBox img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.card .details p
+{
+    font-size: 20px;
+	top: 0;
+	left: 0;
+	
+}
+
+.card:hover .imgBox
+{
+	transform: rotateY(-135deg);
+}
+.card .details
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+#s{
+        margin-top: 70px;
+        
+        
+        
+    }
+input[type = "text"]{
+   
+    border:0;
+    background:none;
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid #000;
+    padding: 14px 10px;
+    width: 150px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    
+    
+}
+input[type = "text"]:focus{
+    width: 188px;
+    border-color: hsl(24, 65%, 51%);
+
+}
+input[type="submit"]{
+    border:0;
+    background:none;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid hsl(24, 65%, 51%);
+    padding: 14px 40px;
+    margin-left: 120px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+
+}
+input[type="submit"]:hover{
+    background: rgba(238, 47, 66, 0.4);
+    border-color: #000;
+    color: black;
+
+}
+
+.load
+{
+position: fixed;
+z-index: 9999;
+top: 0;
+width:100%;
+height: 100%;
+left: 0;
+background-color: rgba(9,17,30,1);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+@keyframes fadeout{
+100%{
+opacity:0;
+visibility: hidden;
+}
+}
+.load.hidden{
+animation: fadeout 4s;
+animation-fill-mode: forwards;
+
+}
+
+        </style>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+			</script>
+			    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+
+		<script type="text/template" id="TvTemp">
+		<div class="container">
+                            <div class="card">
+                                <div class="imgBox">
+                                    <img src={{Poster}}>
+                                </div>
+                                <div class="details">
+									<p><strong>Rating:</strong> {{Rating}} ||| <strong>Year:</strong>{{Year}}<br>{{Descripition}}<br>
+                                        <strong>Genre:</strong>{{Genres}} <br> <strong>Cast:</strong>{{Cast}}</p>
+                                </div>
+                            </div>
+		</script>
+
+			
+		<script>
+			var data = null;
+			
+			function getData(){
+			
+				$.get("http://localhost:8500/HomeData", function(results){
+					data = JSON.parse(results);
+					getTvData();
+					if(data != null){
+						Loader();
+					}
+				});
+			}
+			
+			function getTvData(){
+                var build ="";
+                var output = document.getElementById("output");
+                var template = document.getElementById("TvTemp").innerHTML;
+                var Search = document.getElementById("Search").value;
+                var SearchYear = document.getElementById("SearchYear").value;
+                for(var i=0; i<data.length; i++){        
+                    if (data[i].Name.toLowerCase().indexOf( Search.toLowerCase() ) != -1){
+                        if(data[i].Year.indexOf(SearchYear) != -1){
+                            build += Mustache.render(template, data[i]);
+                        }
+                    }
+                }
+                output.innerHTML = build;
+            }
+			
+        </script>
+        
+        <script>
+                
+                window.onclick=function(){
+                document.getElementById('button').addEventListener("click", function() {
+                    document.querySelector('.bg-modal').style.display = "flex";
+                });
+                
+                document.querySelector('.close').addEventListener("click", function() {
+                    document.querySelector('.bg-modal').style.display = "none";
+                });
+                document.getElementById('button2').addEventListener("click", function() {
+                    document.querySelector('.bg-modal2').style.display = "flex";
+                });
+                
+                document.querySelector('.close2').addEventListener("click", function() {
+                    document.querySelector('.bg-modal2').style.display = "none";
+                });
+                        
+                        
+                            
+                    document.getElementById('button3').addEventListener("click", function() {
+                        document.querySelector('.bg-modal3').style.display = "flex";
+                    });
+                    
+                    document.querySelector('.close3').addEventListener("click", function() {
+                        document.querySelector('.bg-modal3').style.display = "none";
+                    });
+                            }     
+
+                            function Loader(){
+                                const loader = document.querySelector(".load");
+                                loader.className += " hidden";
+                                }
+                        
+                            </script>
+	</head>
+	
+	<body onload="getData()">
+
+        <div class = "load">
+        <img src = "https://media.giphy.com/media/4yvWqqCSlp2I8/giphy.gif">
+        </div>
+            <nav>
+                <div class="brand">
+                    <h2>TV Nation</h2>
+                </div>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="TvShows.html">TV Shows</a></li>
+                    
+                    
+                </ul>
+            </nav>
+            <section class="split">
+                    <div class="screen">
+                        <div class="rate">
+                            <h5>TV-MA</h5>
+                        </div>
+                        <div class="video">
+                        <a href="#" id="button" class="button" ><img src="https://www.klc.org/KLCMaster/assets/images/playicon.png"></a>
+                    </div>
+                        <div class="content">
+                            <h2>Good Omens</h2>
+                            <p>
+                                    A tale of the bungling of Armageddon features an angel, 
+				    a demon, an eleven-year-old Antichrist, and a doom-saying witch.
+                            </p>
+                        </div>
+                        
+                            
+                            
+                            <div class="bg-modal">
+                                    <div class="modal-contents">
+                                        <div class="content1">
+                                                <iframe width="500" height="235" 
+                                                src="https://www.youtube.com/embed/hUJoR4vlIIs" 
+                                                frameborder="0" allow="accelerometer; autoplay; 
+                                                encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen></iframe>
+                                                <p><strong>Cast:</strong> David Tennant, Michael Sheen, Frances McDormand </p>
+                                                <p><strong>Genres:</strong> Comedy, Fantasy</p>
+                                                <p><strong>Seasons:</strong> 1</p>
+                                                <p><strong>Run Time:</strong> 1hr</p>
+                                        </div>
+                                
+                                        <div class="close">+</div>
+                                        
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="screen">
+                            <div class="rate">
+                                    <h5>TV-13</h5>
+                                </div>
+                                <div class="video">
+                                        <a href="#" id="button2" class="button"><img src="https://www.klc.org/KLCMaster/assets/images/playicon.png"></a>
+                                    </div>
+                            <div class="content">
+                                    <h2>Dark Phoenix</h2>
+                                    <p>
+                                            Jean Grey begins to develop incredible powers 
+					that corrupt and turn her into a Dark Phoenix. Now the 
+					X-Men will have to decide if the life of a team member is 
+					worth more than all the people living in the world.
+                                    </p>
+                                </div>
+                                <div class="bg-modal2">
+                                        <div class="modal-contents">
+                                            <div class="content1">
+                                                    <iframe width="500" height="235" 
+                                                    src="https://www.youtube.com/embed/azvR__GRQic" 
+                                                    frameborder="0" allow="accelerometer; autoplay; 
+                                                    encrypted-media; gyroscope; picture-in-picture" 
+                                                    allowfullscreen></iframe>
+                                                    <p><strong>Cast:</strong> James McAvoy, Michael Fassbender, Jennifer Lawrence </p>
+                                                    <p><strong>Genres:</strong> Action, Adventure, Sci-Fi <p>
+                                                    <p><strong>SBox Office:</strong> Unreleased</p>
+                                                    <p><strong>Run Time:</strong> 1h 53min</p>
+                                            </div>
+                                    
+                                            <div class="close2">+</div>
+                                            
+                                        </div>
+                                </div>
+                    </div>
+                    <div class="screen">
+                            <div class="rate">
+                                    <h5>PG</h5>
+                                </div>
+                                <div class="video">
+                                    <a href="#" id="button3" class="button"><img src="https://www.klc.org/KLCMaster/assets/images/playicon.png"></a>
+                                </div>
+                            <div class="content">
+                                    <h2>The Secret Life of Pets 2</h2>
+                                    <p>
+                                         Continuing the story of Max and his pet friends, 
+					following their secret lives after their owners leave 
+					them for work or school each day.
+                                    </p>
+                                </div>
+                                <div class="bg-modal3">
+                                    <div class="modal-contents">
+                                        <div class="content1">
+                                                <iframe width="500" height="235" 
+                                                src="https://www.youtube.com/embed/EUZpVWepAQw" 
+                                                frameborder="0" allow="accelerometer; autoplay; 
+                                                encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen></iframe>
+                                                <p><strong>Cast:</strong> Patton Oswalt, Kevin Hart, Harrison Ford</p>
+                                                <p><strong>Genres:</strong> Animation, Adventure, Comedy <p>
+                                                <p><strong>Box Office:</strong> Unreleased</p>
+                                                <p><strong>Run Time:</strong> 1h 26min </p>
+                                        </div>
+    
+                                        </div>
+                                
+                                        <div class="close3">+</div>
+                                        
+                                    </div>
+                            </div>
+                    </div>
+                    </section>
+
+                    <div id="s">
+                    <input type = "text" id="Search" placeholder = "Enter Show Name">
+                    <input type = "text" id="SearchYear" placeholder = "Enter Show Year">
+                    <input type="submit" id="Btn1" onclick="getData()" value="Search">
+                    </div>
+    
+		<div id="output"></div>
+		
+	
+	<body>
+
+</html
