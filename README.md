@@ -14,8 +14,4 @@ Step 3: Run Code on line 13 in cmd
 
 Step 4: Open index.html
 
-
-Front-end development by Mandeep Singh 
-
-
 Back-end development by Muhammad Azhar
